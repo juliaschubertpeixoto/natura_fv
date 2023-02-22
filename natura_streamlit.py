@@ -14,11 +14,11 @@ if up_file:
     grupo = st.text_input("Grupo: ")
 
     calculate = st.button("Calcular métricas")
-    with st.spinner('Calculando suas métricas'):
-        time.sleep(2)
-    st.success('Métricas calculadas com sucesso!', icon="✅")
 
     if calculate:
+        with st.spinner('Calculando suas métricas'):
+            time.sleep(2)
+        st.success('Métricas calculadas com sucesso!', icon="✅")
         col1, col2, col3 = st.columns(3)
         with col1:
             st.write('coluna 1')
