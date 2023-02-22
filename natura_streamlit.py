@@ -4,7 +4,7 @@ import time
 
 st.title("Projeto Berçário")
 
-up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'])
+up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'], label_visibility='collapsed')
 
 if up_file:
     df = pd.read_csv(up_file, encoding='utf8')
