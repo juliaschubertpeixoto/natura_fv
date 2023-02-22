@@ -14,6 +14,9 @@ if up_file:
     grupo = st.text_input("Grupo: ")
 
     calculate = st.button("Calcular métricas")
+    with st.spinner('Calculando suas métricas'):
+        time.sleep(2)
+    st.success('Métricas calculadas com sucesso!', icon="✅")
 
     if calculate:
         col1, col2, col3 = st.columns(3)
