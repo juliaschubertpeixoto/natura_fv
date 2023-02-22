@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Projeto Berçário")
 
-up_file = st.file_uploader("Selecione um arquivo", type='csv')
+up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'])
 
 if up_file is not None:
 
