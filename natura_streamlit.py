@@ -20,13 +20,13 @@ if up_file:
         bronze = ((df[df['Nível']=='BRONZE']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
         prata = ((df[df['Nível']=='PRATA']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
         ouro = ((df[df['Nível']=='OURO']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
-        ativa = ((df[df['Status']=='ATIVA']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
+        ativa = ((df[df['Status CN']=='ATIVA']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
         digital = ((df[df['Venda Digital']=='SIM']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
         treinamento = ((df[df['Treinamento']=='SIM']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
         debito = ((df[df['Débito']=='SIM']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
         status = ['I4', 'I5', 'I6']
-        indisp = ((df[df['Status'].isin(status)]['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
-        itres = ((df[df['Status']=='I3']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
+        indisp = ((df[df['Status CN'].isin(status)]['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
+        itres = ((df[df['Status CN']=='I3']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
 
     elif choice=='Setor':
         st.subheader('Digite seu setor:')
