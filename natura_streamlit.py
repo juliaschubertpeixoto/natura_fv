@@ -14,8 +14,8 @@ if up_file:
 
     st.success('Upload concluído!')
     st.subheader('Aplique seus filtros:')
-    setor = st.text_input("Setor: ")
-    grupo = st.text_input("Grupo: ")
+    setor = str(st.text_input("Setor: "))
+    grupo = str(st.text_input("Grupo: "))
 
     calculate = st.button("Calcular métricas")
 
@@ -32,10 +32,5 @@ if up_file:
                 st.write(df[(df['Setor']==setor) & (df['Grupo']==grupo)]['Cd Consultora'].count())
                 bronze = ((df[(df['Setor']==setor) & (df['Grupo']==grupo) & (df['Nível']=='BRONZE')]['Cd Consultora'].count())/(df[(df['Setor']==setor) & (df['Grupo']==grupo)]['Cd Consultora'].count()))
                 st.metric("Bronze", bronze)
-        '''with col2:
-            st.write('coluna 2')
-        with col3:
-            st.write('coluna 3')'''
-
     else:
         st.write('não clicou')
