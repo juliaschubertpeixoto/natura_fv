@@ -30,7 +30,7 @@ if up_file:
 
     elif choice=='Setor':
         st.subheader('Digite seu setor:')
-        setor = str(st.selectbox("Setor: ", options=df['Setor'].unique()))
+        setor = str(st.selectbox("Setor: ", options=df['Setor'].unique().sort()))
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
         ouro = ((df[(df['Nível']=='OURO') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
@@ -66,19 +66,6 @@ if up_file:
             st.metric("Bronze", f"{bronze:.1f}%")
             st.metric("Ativas", f"{ativa:.1f}%")
             st.metric("Débito", f"{debito:.1f}%")
-        st.markdown('''
-            <style>
-            /*center metric label*/
-            [data-testid="stMetricLabel"] > div:nth-child(1) {
-                justify-content: center;
-            }
-
-            /*center metric value*/
-            [data-testid="stMetricValue"] > div:nth-child(1) {
-                justify-content: center;
-            }
-            </style>
-            ''', unsafe_allow_html=True)
         with col2:
             st.metric("Prata", f"{prata:.1f}%")
             st.metric("Digitalização", f"{digital:.1f}%")
@@ -90,17 +77,3 @@ if up_file:
 
     else:
         st.write('Clique no botão para calcular as métricas')
-
-st.markdown('''
-<style>
-/*center metric label*/
-[data-testid="stMetricLabel"] > div:nth-child(1) {
-    justify-content: center;
-}
-
-/*center metric value*/
-[data-testid="stMetricValue"] > div:nth-child(1) {
-    justify-content: center;
-}
-</style>
-''', unsafe_allow_html=True)
