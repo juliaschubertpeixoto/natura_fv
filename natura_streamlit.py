@@ -35,11 +35,6 @@ if up_file:
         st.success('Métricas calculadas com sucesso!', icon="✅")
         col1, col2, col3 = st.columns(3)
         with col1:
-            if ((setor is not None) & (grupo is not None)):
-                st.write(setor)
-                st.write(grupo)
-                st.write(df[(df['Setor']=='CORAÇÃO GAÚCHO') & (df['Grupo']==9146) & (df['Nível']=='BRONZE')]['Cd Consultora'].count())
-                st.write(df[(df['Setor']==setor) & (df['Grupo']==grupo)]['Cd Consultora'].count())
-                st.metric("Bronze", qtd_bronze)
+            st.metric("Bronze", qtd_bronze)
     else:
         st.write('não clicou')
