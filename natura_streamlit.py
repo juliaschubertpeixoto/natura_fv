@@ -30,7 +30,6 @@ if up_file:
                 st.write(grupo)
                 st.write(df[(df['Setor']==setor) & (df['Grupo']==grupo) & (df['Nível']=='BRONZE')]['Cd Consultora'].count())
                 st.write(df[(df['Setor']==setor) & (df['Grupo']==grupo)]['Cd Consultora'].count())
-                bronze = ((df[(df['Setor']==setor) & (df['Grupo']==grupo) & (df['Nível']=='BRONZE')]['Cd Consultora'].count())/(df[(df['Setor']==setor) & (df['Grupo']==grupo)]['Cd Consultora'].count()))
-                st.metric("Bronze", bronze)
+                st.metric("Bronze", 10)
     else:
         st.write('não clicou')
