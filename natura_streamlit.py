@@ -30,8 +30,8 @@ if up_file:
         itres = ((df[df['Status CN']=='I3']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
 
     elif choice=='Setor':
-        st.subheader('Digite seu setor:')
-        setor = str(st.selectbox("Setor: ", options=np.sort(df["Setor"].unique())))
+        st.subheader('Digite ou selecione o setor:')
+        setor = str(st.selectbox("Setor: ", options=np.sort(df["Setor"].unique()), help="Digite ou selecione o grupo"))
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
         ouro = ((df[(df['Nível']=='OURO') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
@@ -44,7 +44,7 @@ if up_file:
         itres = ((df[(df['Status CN']=='I3') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
 
     elif choice=='Grupo':
-        st.subheader('Digite seu grupo:')
+        st.subheader('Digite ou selecione o grupo:')
         grupo_values = np.sort(df["Grupo"].unique())
         grupo = st.selectbox("Grupo: ", options=grupo_values[grupo_values > 0], help="Digite ou selecione o grupo")
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
