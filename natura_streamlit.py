@@ -45,7 +45,7 @@ if up_file:
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("Bronze", f"{bronze:.1f}%")
-            st.metric("Ativas", f"{ativas:.1f}%")
+            st.metric("Ativas", f"{ativa:.1f}%")
             st.metric("Débito", f"{debito:.1f}%")
         with col2:
             st.metric("Prata", f"{prata:.1f}%")
