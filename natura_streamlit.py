@@ -17,7 +17,7 @@ if up_file:
     if choice=='Gerência':
         #st.subheader('Digite sua gerência:')
         #gerencia = str(st.text_input("Gerência: "))
-        qtd_bronze = df[df['Nível']=='BRONZE']['Cd Consultora'].count()
+        bronze = ((df[df['Nível']=='BRONZE']['Cd Consultora'].count())/(df['Cd Consultora'].count())*100)
 
     elif choice=='Setor':
         st.subheader('Digite seu setor:')
@@ -35,6 +35,6 @@ if up_file:
         st.success('Métricas calculadas com sucesso!', icon="✅")
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("Bronze", qtd_bronze)
+            st.metric("Bronze", bronze+"%")
     else:
         st.write('não clicou')
