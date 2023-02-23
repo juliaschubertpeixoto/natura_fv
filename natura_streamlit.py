@@ -15,7 +15,7 @@ if up_file:
     st.success('Upload concluído!')
     st.subheader('Aplique seus filtros:')
     setor = str(st.text_input("Setor: "))
-    grupo = int(st.text_input("Grupo: "))
+    grupo = str(st.number_input("Grupo: "))
 
     calculate = st.button("Calcular métricas")
 
