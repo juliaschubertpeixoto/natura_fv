@@ -45,6 +45,7 @@ if up_file:
     elif choice=='Grupo':
         st.subheader('Digite seu grupo:')
         grupo = st.text_input("Grupo: ")
+        grupo = int(grupo)
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         ouro = ((df[(df['Nível']=='OURO') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
