@@ -63,7 +63,7 @@ if up_file:
             time.sleep(0.2)
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("<h1>**Bronze**</h1>", f"{bronze:.1f}%")
+            st.metric("**Bronze**", f"{bronze:.1f}%")
             st.metric("Ativas", f"{ativa:.1f}%")
             st.metric("Débito", f"{debito:.1f}%")
         with col2:
