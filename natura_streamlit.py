@@ -7,7 +7,7 @@ st.title("Projeto Berçário")
 up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'], label_visibility='collapsed')
 
 if up_file:
-    df = pd.read_csv(up_file, encoding='utf8')
+    df = pd.read_csv(up_file, encoding='utf8', sep=';')
     st.success('Upload concluído!')
     st.subheader('Aplique seus filtros:')
     setor = st.text_input("Setor: ")
