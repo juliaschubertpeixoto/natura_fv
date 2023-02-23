@@ -43,8 +43,10 @@ if up_file:
         itres = ((df[(df['Status CN']=='I3') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
 
     elif choice=='Grupo':
+        st.subheader('Digite seu setor:')
+        setor = str(st.selectbox("Setor: ", options=df['Setor'].unique()))
         st.subheader('Digite seu grupo:')
-        grupo = st.selectbox("Grupo: ", options=df['Grupo'].unique())
+        grupo = st.selectbox("Grupo: ", options=df[df['Setor'==setor]]['Grupo'].unique())
         grupo = int(grupo)
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
