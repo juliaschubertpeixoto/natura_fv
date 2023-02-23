@@ -31,17 +31,36 @@ if up_file:
     elif choice=='Setor':
         st.subheader('Digite seu setor:')
         setor = str(st.text_input("Setor: "))
+        bronze = ((df[(df['Nível']=='BRONZE') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        prata = ((df[(df['Nível']=='PRATA') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        ouro = ((df[(df['Nível']=='OURO') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        ativa = ((df[(df['Status CN']=='ATIVA') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        digital = ((df[(df['Venda Digital']=='SIM') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        treinamento = ((df[(df['Treinamento']=='SIM') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        debito = ((df[(df['Débito']=='SIM') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        status = ['I4', 'I5', 'I6']
+        indisp = ((df[(df['Status CN'].isin(status)) & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
+        itres = ((df[(df['Status CN']=='I3') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
 
     elif choice=='Grupo':
         st.subheader('Digite seu grupo:')
-        setor = str(st.text_input("Grupo: "))
+        grupo = st.text_input("Grupo: ")
+        bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        prata = ((df[(df['Nível']=='PRATA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        ouro = ((df[(df['Nível']=='OURO') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        ativa = ((df[(df['Status CN']=='ATIVA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        digital = ((df[(df['Venda Digital']=='SIM') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        treinamento = ((df[(df['Treinamento']=='SIM') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        debito = ((df[(df['Débito']=='SIM') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        status = ['I4', 'I5', 'I6']
+        indisp = ((df[(df['Status CN'].isin(status)) & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
+        itres = ((df[(df['Status CN']=='I3') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
 
     calculate = st.button("Calcular métricas")
 
     if calculate:
-        with st.spinner('Calculando suas métricas'):
-            time.sleep(0.5)
-        st.success('Métricas calculadas com sucesso!', icon="✅")
+        with st.spinner('Calculando as métricas...'):
+            time.sleep(0.2)
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("Bronze", f"{bronze:.1f}%")
