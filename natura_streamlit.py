@@ -46,7 +46,7 @@ if up_file:
     elif choice=='Grupo':
         st.subheader('Digite seu grupo:')
         grupo_values = np.sort(df["Grupo"].unique())
-        grupo = st.selectbox("Grupo: ", options=grupo_values[grupo_values > 0])
+        grupo = st.selectbox("Grupo: ", options=grupo_values[grupo_values > 0], help="Digite ou selecione o grupo")
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         ouro = ((df[(df['Nível']=='OURO') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
