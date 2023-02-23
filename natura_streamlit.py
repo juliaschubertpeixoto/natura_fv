@@ -13,6 +13,19 @@ if up_file:
     df['Grupo'] = df['Grupo'].astype(int)
 
     st.success('Upload concluído!')
+    choice = st.radio('Nível das métricas', ['Gerência', 'Setor', 'Grupo'])
+    if choice=='Gerência':
+        st.subheader('Digite sua gerência:')
+        gerencia = str(st.text_input("Gerência: "))
+
+    elif choice=='Setor':
+        st.subheader('Digite seu setor:')
+        setor = str(st.text_input("Setor: "))
+
+    elif choice=='Grupo':
+        st.subheader('Digite seu grupo:')
+        setor = str(st.text_input("Grupo: "))
+    
     st.subheader('Aplique seus filtros:')
     setor = str(st.text_input("Setor: "))
     grupo = str(st.number_input("Grupo: "))
