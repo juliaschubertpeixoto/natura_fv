@@ -4,7 +4,7 @@ import time
 
 st.title("Projeto Berçário")
 
-up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'], label_visibility='collapsed')
+up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'])
 
 if up_file:
     df = pd.read_csv(up_file, encoding='utf8', sep=';')
@@ -43,11 +43,8 @@ if up_file:
         itres = ((df[(df['Status CN']=='I3') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
 
     elif choice=='Grupo':
-        st.subheader('Digite seu setor:')
-        setor = str(st.selectbox("Setor: ", options=df['Setor'].unique()))
         st.subheader('Digite seu grupo:')
-        grupo = st.selectbox("Grupo: ", options=df[df['Setor'==setor]]['Grupo'].unique())
-        grupo = int(grupo)
+        grupo = st.selectbox("Grupo: ", options=df['Grupo'].unique())
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         ouro = ((df[(df['Nível']=='OURO') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
@@ -66,7 +63,7 @@ if up_file:
             time.sleep(0.2)
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("Bronze", f"{bronze:.1f}%")
+            st.metric("# **Bronze**", f"{bronze:.1f}%")
             st.metric("Ativas", f"{ativa:.1f}%")
             st.metric("Débito", f"{debito:.1f}%")
         with col2:
