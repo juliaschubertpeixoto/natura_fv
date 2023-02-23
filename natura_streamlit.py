@@ -8,6 +8,10 @@ up_file = st.file_uploader("Selecione um arquivo", type=['csv', 'xlsx'], label_v
 
 if up_file:
     df = pd.read_csv(up_file, encoding='utf8', sep=';')
+    df['Cd Consultora'] = df['Cd Consultora'].astype(int)
+    df['Ciclo Início'] = df['Ciclo Início'].astype(int)
+    df['Grupo'] = df['Grupo'].astype(int)
+
     st.success('Upload concluído!')
     st.subheader('Aplique seus filtros:')
     setor = st.text_input("Setor: ")
