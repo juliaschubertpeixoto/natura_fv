@@ -35,6 +35,6 @@ if up_file:
         st.success('Métricas calculadas com sucesso!', icon="✅")
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("Bronze", f"{bronze}%")
+            st.metric("Bronze", f"{bronze:>0.1}%")
     else:
         st.write('não clicou')
