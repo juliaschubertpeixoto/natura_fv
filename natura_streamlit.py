@@ -22,6 +22,7 @@ if up_file:
         col1, col2, col3 = st.columns(3)
         with col1:
             if ((setor is not None) & (grupo is not None)):
+                st.write(df)
                 st.write('Colunas'+df.columns)
                 bronze = df[(df['Setor']==setor) & (df['Grupo']==grupo) & (df['Nível']=='BRONZE')].count()/df[(df['Setor']==setor) & (df['Grupo']==grupo)].count()
                 st.metric("Bronze", bronze)
