@@ -21,8 +21,8 @@ if up_file:
         st.success('Métricas calculadas com sucesso!', icon="✅")
         col1, col2, col3 = st.columns(3)
         with col1:
-            if setor && grupo:
-                bronze = df[(df['Setor']==setor) && (df['Grupo']==grupo) && (df['Nível']=='BRONZE')].count()/df[(df['Setor']==setor) && (df['Grupo']==grupo)].count()
+            if setor & grupo:
+                bronze = df[(df['Setor']==setor) & (df['Grupo']==grupo) & (df['Nível']=='BRONZE')].count()/df[(df['Setor']==setor) & (df['Grupo']==grupo)].count()
                 st.metric("Bronze", bronze)
         with col2:
             st.write('coluna 2')
