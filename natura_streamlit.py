@@ -30,7 +30,7 @@ if up_file:
 
     elif choice=='Setor':
         st.subheader('Digite seu setor:')
-        setor = str(st.text_input("Setor: "))
+        setor = str(st.selectbox("Setor: ", options=df['Setor'].unique()))
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
         ouro = ((df[(df['Nível']=='OURO') & (df['Setor']==setor)]['Cd Consultora'].count())/(df[df['Setor']==setor]['Cd Consultora'].count())*100)
@@ -44,7 +44,7 @@ if up_file:
 
     elif choice=='Grupo':
         st.subheader('Digite seu grupo:')
-        grupo = st.text_input("Grupo: ")
+        grupo = st.selectbox("Grupo: ", options=df['Grupo'].unique())
         grupo = int(grupo)
         bronze = ((df[(df['Nível']=='BRONZE') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
         prata = ((df[(df['Nível']=='PRATA') & (df['Grupo']==grupo)]['Cd Consultora'].count())/(df[df['Grupo']==grupo]['Cd Consultora'].count())*100)
