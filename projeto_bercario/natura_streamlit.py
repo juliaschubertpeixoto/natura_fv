@@ -65,27 +65,23 @@ if up_file:
             time.sleep(0.2)
         col1, col2, col3 = st.columns(3)
         with col1:
-            bronze_title = '<b><p style="font-size: 20px;">Bronze</p></b>'
-            st.markdown(bronze_title, unsafe_allow_html=True)
-            st.metric(label="",value=f"{bronze:.1f}%")
+            st.metric(label="Bronze",value=f"{bronze:.1f}%")
             if bronze>0.3:
-                st.write("Alto Potencial de Desenvolvimento")
+                potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
+                st.markdown(potencial, unsafe_allow_html=True)
             elif bronze<0.2:
-                st.write("Alerta Plano de Crescimento")
+                potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
+                st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
-            ativas_title = '<b><p style="font-size: 20px;">Ativas</p></b>'
-            st.markdown(ativas_title, unsafe_allow_html=True)
-            st.metric("", f"{ativa:.1f}%")
+            st.metric("Ativas", f"{ativa:.1f}%")
             if ativa>0.5:
                 st.write("Alto Potencial de Desenvolvimento")
             elif ativa<0.2:
                 st.write("Alerta Plano de Crescimento")
             else:
                 st.write("Médio Potencial de Desenvolvimento")
-            debito_title = '<b><p style="font-size: 20px;">Débito</p></b>'
-            st.markdown(debito_title, unsafe_allow_html=True)
-            st.metric("", f"{debito:.1f}%")
+            st.metric("Débito", f"{debito:.1f}%")
             if debito<0.1:
                 st.write("Alto Potencial de Desenvolvimento")
             elif debito>0.2:
