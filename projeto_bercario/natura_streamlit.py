@@ -65,10 +65,7 @@ if up_file:
             time.sleep(0.2)
         col1, col2, col3 = st.columns(3)
         with col1:
-            div.a{
-                text-align:center;
-            }
-            bronze_title = <div class="a"> <p style="color=	#FFA500; font-size: 20px;">Bronze</p></div>
+            bronze_title = <p style="color=	#FFA500; font-size: 20px; text-align: center;">Bronze</p>
             st.markdown(bronze_title, unsafe_allow_html=True)
             st.metric(f"{bronze:.1f}%")
             if bronze>0.3:
