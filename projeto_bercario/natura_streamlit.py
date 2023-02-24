@@ -66,16 +66,70 @@ if up_file:
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("Bronze", f"{bronze:.1f}%")
+            if bronze>0.3:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif bronze<0.2:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
             st.metric("Ativas", f"{ativa:.1f}%")
+            if ativa>0.5:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif ativa<0.2:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
             st.metric("Débito", f"{debito:.1f}%")
+            if debito<0.1:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif debito>0.2:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
         with col2:
             st.metric("Prata", f"{prata:.1f}%")
+            if prata>0.25:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif prata<0.1:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
             st.metric("Digitalização", f"{digital:.1f}%")
+            if digital>0.75:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif digital<0.5:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
             st.metric("Indisponíveis", f"{indisp:.1f}%")
+            if indisp<0.15:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif indisp>0.25:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
         with col3:
             st.metric("Ouro", f"{ouro:.1f}%")
+            if ouro>0.1:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif ouro<0.05:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
             st.metric("Treinamento", f"{treinamento:.1f}%")
+            if treinamento>0.8:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif treinamento<0.4:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
             st.metric("i3", f"{itres:.1f}%")
+            if itres<0.1:
+                st.write("Alto Potencial de Desenvolvimento")
+            elif itres>0.15:
+                st.write("Alerta Plano de Crescimento")
+            else:
+                st.write("Médio Potencial de Desenvolvimento")
 
     else:
         st.write('Clique no botão para calcular as métricas')
