@@ -67,10 +67,10 @@ if up_file:
         with col1:
             st.metric(label="Bronze",value=f"{bronze:.1f}%")
             if bronze>0.3:
-                potencial = '<b><p style="font-size: 20px;color:green">Alto Potencial de Desenvolvimento</p></b>'
+                potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             elif bronze<0.2:
-                potencial = '<b><p style="font-size: 20px;color:red">Alerta Plano de Crescimento</p></b>'
+                potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
