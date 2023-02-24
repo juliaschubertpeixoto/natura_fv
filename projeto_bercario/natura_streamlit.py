@@ -66,84 +66,84 @@ if up_file:
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric(label="Bronze",value=f"{bronze:.1f}%")
-            if bronze>0.3:
+            if bronze>30:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif bronze<0.2:
+            elif bronze<20:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
             st.metric("Ativas", f"{ativa:.1f}%")
-            if ativa>0.5:
+            if ativa>50:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif ativa<0.2:
+            elif ativa<20:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
             st.metric("Débito", f"{debito:.1f}%")
-            if debito<0.1:
+            if debito<10:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif debito>0.2:
+            elif debito>20:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
         with col2:
             st.metric("Prata", f"{prata:.1f}%")
-            if prata>0.25:
+            if prata>25:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif prata<0.1:
+            elif prata<10:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
             st.metric("Digitalização", f"{digital:.1f}%")
-            if digital>0.75:
+            if digital>75:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif digital<0.5:
+            elif digital<50:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
             st.metric("Indisponíveis", f"{indisp:.1f}%")
-            if indisp<0.15:
+            if indisp<15:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif indisp>0.25:
+            elif indisp>25:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
         with col3:
             st.metric("Ouro", f"{ouro:.1f}%")
-            if ouro>0.1:
+            if ouro>10:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif ouro<0.05:
+            elif ouro<5:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
             st.metric("Treinamento", f"{treinamento:.1f}%")
-            if treinamento>0.8:
+            if treinamento>80:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif treinamento<0.4:
+            elif treinamento<40:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
             st.metric("i3", f"{itres:.1f}%")
-            if itres<0.1:
+            if itres<10:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
-            elif itres>0.15:
+            elif itres>15:
                 potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
