@@ -70,7 +70,7 @@ if up_file:
                 potencial = '<b><p style="color:green">Alto Potencial de Desenvolvimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             elif bronze<20:
-                potencial = '<b><p style="color:red">Alerta Plano de Crescimento</p></b>'
+                potencial = '<b><p style="color:red">Alerta Plano de \n Crescimento</p></b>'
                 st.markdown(potencial, unsafe_allow_html=True)
             else:
                 st.write("Médio Potencial de Desenvolvimento")
